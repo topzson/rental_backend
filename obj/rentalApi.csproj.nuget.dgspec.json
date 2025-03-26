@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyWork\\exam_job\\rentalApi\\rentalApi.csproj": {}
+    "D:\\MyWork\\rental_backend\\rentalApi.csproj": {}
   },
   "projects": {
-    "D:\\MyWork\\exam_job\\rentalApi\\rentalApi.csproj": {
+    "D:\\MyWork\\rental_backend\\rentalApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyWork\\exam_job\\rentalApi\\rentalApi.csproj",
+        "projectUniqueName": "D:\\MyWork\\rental_backend\\rentalApi.csproj",
         "projectName": "rentalApi",
-        "projectPath": "D:\\MyWork\\exam_job\\rentalApi\\rentalApi.csproj",
+        "projectPath": "D:\\MyWork\\rental_backend\\rentalApi.csproj",
         "packagesPath": "C:\\Users\\Topzson\\.nuget\\packages\\",
-        "outputPath": "D:\\MyWork\\exam_job\\rentalApi\\obj\\",
+        "outputPath": "D:\\MyWork\\rental_backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Topzson\\AppData\\Roaming\\NuGet\\NuGet.Config"
