@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using rentalApi.Data;
 using rentalApi.Models;
+using rentalApi.Services;
 
 namespace rentalApi.Controllers
 {
@@ -8,23 +9,31 @@ namespace rentalApi.Controllers
     [Route("api/[controller]")]
     public class VehiclesController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<Vehicles>> GetAllVehicles()
+        private readonly IVehiclesService _vehiclesService;
+        public VehiclesController(IVehiclesService vehiclesService)
         {
-            return Ok(VehiclesData.VehiclesList);
+            _vehiclesService = vehiclesService;
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAllVehicles()
+        {
+            var vehicles = await _vehiclesService.GetAllVehicles();
+            if (vehicles == null || !vehicles.Any())
+            {
+                return NotFound();
+            }
+            return Ok(vehicles);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Vehicles> GetVehiclesById(int id)
+        public async Task<IActionResult> GetVehicleById(Guid id)
         {
-            var vehicle = VehiclesData.VehiclesList.FirstOrDefault(v => v.rentalContract.id == id);
+            var vehicle = await _vehiclesService.GetVehicleById(id);
             if (vehicle == null)
             {
                 return NotFound();
             }
             return Ok(vehicle);
         }
-         
-
     }
 }
